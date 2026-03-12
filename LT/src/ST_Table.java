@@ -14,12 +14,7 @@ String getN(int index){
 String getT(int index){
     return ST[index].IDType;
 }
-boolean member(String ID){
-    for (int i = 0; i <index; i++){
-          if (!ID.equals(ST[i]))   
-         return true;
-    }
-}
+
 
 
 }
