@@ -17,7 +17,7 @@ String getT(int index){
 boolean member(String ID){
     for (int i = 0; i <index; i++){
           if (!ID.equals(ST[i]))   
-         
+         return true;
     }
 }
 
