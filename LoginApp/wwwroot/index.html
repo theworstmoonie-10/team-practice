@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Theme</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" /><br /><br />
+    <input type="password" id="password" placeholder="Password" /><br /><br />
+    <button onclick="login()">Login</button>
+    <h3 id="result"></h3>
+    <script>
+        function login() {
+            fetch("/index", {     //fetching the login endpoint
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username: document.getElementById("username").value,
+                    password: document.getElementById("password").value
+                })
+            })
+                .then(res => res.json())   //convert the response to json
+                .then(data => {
+                    document.getElementById("result").innerText = data.message;
+                    if (data.status == "success") {
+                        window.location.href = "/profile.html"
+                    }
+
+                })
+        }
+    </script>
+    <!--<h2>Theme</h2>
+    <input type="text" id="theme" placeholder="Enter Theme" /> <br /><br />
+    <button onclick="Check()">Check Theme</button>
+    <h3 id="result"></h3>
+
+    <script>
+        function Check() {
+
+            fetch("/index", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    theme: document.getElementById("theme").value
+                })
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    document.getElementById("result").innerText = data.message;
+
+                });
+        }
+    </script>-->
+
+
+</body>
+</html>

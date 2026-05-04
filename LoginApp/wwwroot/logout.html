@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Logout</title>
+</head>
+<body>
+    <h2>Logout</h2>
+    <h3 id="result"></h3>
+    <button onclick="logout()">Logout</button>
+    <script>
+        function logout() {
+            fetch("/logout", {
+                method: "GET"
+            })
+                .then(res => res.json())
+                .then(data => {
+                    window.alert("logged out Successfully")
+                    document.getElementById("result").innerText = data.message;
+                    window.location.href = "/profile.html";
+                });
+        }
+    </script>
+</body>
+</html >

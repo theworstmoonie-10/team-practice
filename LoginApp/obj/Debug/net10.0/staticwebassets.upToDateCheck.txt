@@ -1,0 +1,6 @@
+wwwroot\index.html
+wwwroot\logout.html
+wwwroot\profile.html
+E:\vstudio\LoginApp\LoginApp\wwwroot\index.html
+E:\vstudio\LoginApp\LoginApp\wwwroot\profile.html
+E:\vstudio\LoginApp\LoginApp\wwwroot\logout.html

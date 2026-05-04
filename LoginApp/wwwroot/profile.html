@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+<h2>Profile Page</h2>
+    <button onclick="getProfile()">Load Profile</button>
+    <button onclick="goLogout()">Go To Logout</button>
+    <h3 id="result"></h3>
+    <script>
+        function getProfile() {
+            fetch("/profile")
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("result").innerText = data.message;
+                });
+        }
+
+        function goLogout() {
+            window.location.href = "/logout.html";
+        }
+    </script>
+</body>
+</html>
